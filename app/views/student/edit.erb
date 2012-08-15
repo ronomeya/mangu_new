@@ -17,7 +17,6 @@
 #specific language governing permissions and limitations
 #under the License. -%>
 
-
 <div id="content-header">
    <img src="/images/student_details/student_details_logo.jpg" />
   <h1>Edit details</h1>
@@ -88,8 +87,28 @@
           <label for="master_student_grade">Course & Batch <span class="necessary-field">*</span></label>
           <div class="text-input-bg"><%= s.select :batch_id, @batches.map {|b| [b.full_name, b.id]} %></div>
         </div>
+        
+        <hr class="label-underline"></hr>
+
+        <div class="label-field-pair">
+          <label for="master_student_category">Category</label>
+          <div class="text-input-bg"><%= select :student, :student_category_id, @student_categories.map {|c| [c.name, c.id]}, { :prompt => 'Select category' } %></div>
+        </div>
+      </div>
+        
+        
 
         <hr class="label-underline"></hr>
+        
+        
+        <div id="hostel_details" >
+        <div class="label-field-pair">
+          <label for="student_category">Hostel</label>
+          <div class="text-input-bg"><%= select :student, :hostel_id, Hostel.all.map {|c| [c.house, c.id]}, { :prompt => 'Select a House' } %></div>
+        </div>
+
+        <hr class="label-underline"></hr>
+        </div>
 
         <div class="label-field-pair">
           <label for="master_student_date_of_birth">Date of birth <span class="necessary-field">*</span></label>
@@ -119,8 +138,7 @@
 
         <div class="label-field-pair">
           <label for="master_student_blood_group">Blood group</label>
-          <div class="text-input-bg"><%= select :student, :blood_group, ["Unknown","A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{ :prompt => 'Select Blood Group' },
-              :selected => @student.blood_group %></div>
+          <div class="text-input-bg"><%= select :student, :blood_group, ["Unknown","A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],{ :prompt => 'Select Blood Group' }%></div>
         </div>
 
         <hr class="label-underline"></hr>
@@ -134,7 +152,7 @@
 
         <div class="label-field-pair">
           <label for="master_student_nationality">Nationality</label>
-          <div class="text-input-bg"><%= select :student, :nationality_id, Country.all.map {|c| [c.name, c.id]}, :selected => @student.nationality.id %></div>
+          <div class="text-input-bg"><%= select :student, :nationality_id, Country.all.map {|c| [c.name, c.id]}%></div>
         </div>
 
         <hr class="label-underline"></hr>
@@ -151,13 +169,7 @@
           <div class="text-input-bg"><%= s.text_field :religion, :value =>@student.religion %></div>
         </div>
 
-        <hr class="label-underline"></hr>
-
-        <div class="label-field-pair">
-          <label for="master_student_category">Category</label>
-          <div class="text-input-bg"><%= select :student, :student_category_id, @student_categories.map {|c| [c.name, c.id]}, { :prompt => 'Select category' } %></div>
-        </div>
-      </div>
+        
       <br/>
 
       <span class="span-sub-heading">Contact Details</span>
@@ -202,7 +214,7 @@
 
         <div class="label-field-pair">
           <label for="master_student_country">Country</label>
-          <div class="text-input-bg"><%= select :student, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected => @student.country.id %></div>
+          <div class="text-input-bg"><%= select :student, :country_id, Country.all.map {|c| [c.name, c.id]}%></div>
         </div>
 
         <hr class="label-underline"></hr>
@@ -245,6 +257,6 @@
     </div>
 
     <%= submit_tag "", :class => "submit_button", :value => '► Update' %>
-  <% end %>
+  <% end %>  
 
 </div>

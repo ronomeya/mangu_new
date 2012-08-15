@@ -68,6 +68,15 @@
         <div class="link-descr">Set some additional details for admission.</div>
       </div>
     <% end %>
+    
+    <% if permitted_to? :settings, :configuration %>
+      <div class="link-box">
+        <div class="link-heading"><%= link_to "Add houses to hostel", "/hostels"%></div>
+        <div class="link-descr">Manage houses in the hostel/</div>
+      </div>
+    <% end %>
+    
+    
 
     <% if permitted_to? :index, :sms %>
       <% @config = Configuration.available_modules %>

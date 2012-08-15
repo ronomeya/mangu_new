@@ -1,5 +1,0 @@
-sms_settings:
- username: username
- password: password
- sendername: sender
- host_url: http://yoursmsprovider.com/api

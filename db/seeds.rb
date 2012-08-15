@@ -68,9 +68,9 @@ AdditionalField.create([
 
 #Employee.delete_all
 Employee.create([
-#  {:employee_number => 'admin',:joining_date => Date.today,:first_name => 'Admin',:last_name => 'Employee',
-#   :employee_department_id => 1,:employee_grade_id => 1,:employee_position_id => 1,
-#   :employee_category_id => 1,:date_of_birth => Date.today-365},
+ {:employee_number => 'admin',:joining_date => Date.today,:first_name => 'Admin',:last_name => 'Employee',
+  :employee_department_id => 1,:employee_grade_id => 1,:employee_position_id => 1,
+  :employee_category_id => 1,:date_of_birth => Date.today-365},
   {:employee_number => 'EMP1',:joining_date => Date.today,:first_name => 'Unni',:last_name => 'Koroth',
    :employee_department_id => 2,:employee_grade_id => 2,:employee_position_id => 2,
    :employee_category_id => 2,:date_of_birth => Date.today-365},
@@ -91,8 +91,8 @@ Employee.create([
 #user creations
 #User.delete_all
 User.create([
-#   {:username   => 'admin',:password   => 'admin123',:first_name => 'Fedena',
-#    :last_name  => 'Administrator',:email=> 'admin@fedena.com',:role=> 'Admin'},
+  {:username   => 'admin',:password   => 'admin123',:first_name => 'Fedena',
+   :last_name  => 'Administrator',:email=> 'admin@fedena.com',:role=> 'Admin'},
    {:username   => 'EMP1',:password   => 'EMP1123',:first_name => 'Unni',
     :last_name  => 'Koroth',:email=> 'unni@fedena.com',:role=> 'Employee'},
    {:username   => 'EMP2',:password   => 'EMP2123',:first_name => 'Vishwajith',

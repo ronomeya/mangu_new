@@ -28,6 +28,7 @@
 
 <div id="inner-tab-menu">
   <ul>
+    
     <% if permitted_to? :reports,:student %>
       <li><%= link_to 'Reports', :controller => 'student',
           :action => 'reports', :id => @student %></li>
@@ -93,6 +94,11 @@
       <tr class="even left"><td>Language</td><td class="right"><%= @student.language %></td></tr>
 
       <tr class="odd left"><td>Category</td><td class="right"><%= @student.student_category.name unless @student.student_category.nil? %></td></tr>
+      
+      <%if @student.student_category.name == "Full Boarders" %>
+      <tr class="odd left"><td>Hostel</td><td class="right"><%= @student.hostel.house unless @student.hostel.nil? %></td></tr>
+      <%end%>
+      
       <tr class="even left"><td>Religion</td><td class="right"><%= @student.religion %></td></tr>
       <tr class="odd left"><td>Address</td><td class="right"><%= @student.address_line1%>, <%=  @student.address_line2 %></td></tr>
 <%#*<tr class="even left"><td></td><td class="right"><%= @student.address_line2%>

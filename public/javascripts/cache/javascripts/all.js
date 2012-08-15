@@ -7298,3 +7298,31 @@ obj.appendChild(a);
 console.log(a);
 });
 });
+
+
+Event.observe(window, 'load', function() {
+	Event.observe('student_student_category_id', 'change', function(){
+  if($('student_student_category_id').value== 2 ){
+		$('hostel_details').show();
+	} 
+	else {
+		$('hostel_details').hide();
+		$('student_hostel_id').value = "";
+				     
+	}
+ });
+});
+
+document.observe("dom:loaded", function() {
+	    if($('student_student_category_id').value== 2 ){
+				    $('hostel_details').show();
+				    } else {
+				     $('hostel_details').hide();
+				     $('student_hostel_id').value="";
+				     }
+});
+
+
+
+        
+       
